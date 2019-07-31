@@ -108,7 +108,6 @@ def self.students_below_12th_grade
     data.map do |row|
       self.new_from_db(row)
     end
-
-end
+  end
 
 end

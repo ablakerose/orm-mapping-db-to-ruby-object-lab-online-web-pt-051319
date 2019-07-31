@@ -75,7 +75,7 @@ def self.all_students_in_grade_9
   SQL
 
   data = DB[:conn].execute(sql)
-    
+
   data.map do |row|
     self.new_from_db(row)
   end
@@ -89,7 +89,7 @@ def self.students_below_12th_grade
   SQL
 
   data = DB[:conn].execute(sql)
-    
+
   data.map do |row|
     self.new_from_db(row)
   end

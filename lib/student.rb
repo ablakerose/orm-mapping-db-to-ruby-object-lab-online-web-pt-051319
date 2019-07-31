@@ -106,6 +106,20 @@ def self.first_student_in_grade_10
   data.map do |row|
     self.new_from_db(row)
   end.first
+
+  def self.first_X_student_in_grade_10
+    sql = <<-SQL
+      SELECT *
+      FROM students
+      WHERE grade = ?
+      LIMIT 1
+    SQL
+
+    data = DB[:conn].execute(sql)
+
+    data.map do |row|
+      self.new_from_db(row)
+    end
   
 end
 
